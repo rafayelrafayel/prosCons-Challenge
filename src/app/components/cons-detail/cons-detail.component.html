@@ -1,0 +1,11 @@
+<div *ngIf="cons">
+    <h2>{{ cons.text | uppercase }} Details</h2>
+    <div><span>id: </span>{{cons.id}}</div>
+    <div>
+        <div class="form-group custum-style">
+            <input class="form-control" [(ngModel)]="cons.text" placeholder="name"/>
+        </div>
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+</div>

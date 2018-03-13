@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-6  col-sm-6 col-xs-6 ">
+            <h2>Pros</h2>
+            <div class="row" *ngFor="let pro of pros">
+                 <div class="col-md-6  col-sm-6 col-xs-6">{{pro.text}}</div>
+                <div class="col-md-6  col-sm-6 col-xs-6">
+                    <a  (click)="deletePros(pro)" class="btn btn-primary a-btn-slide-text pull-right">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <span><strong>Delete</strong></span>            
+                    </a>   
+                    <a  routerLink="/detail/pros/{{pro.id}}" class="btn btn-primary a-btn-slide-text pull-right">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        <span><strong>Edit</strong></span>            
+                    </a>
+
+                </div>
+            </div>
+            <div class="like_form">
+                <div class="form-group">
+                    <label for="add_pros"></label>
+                    <input id="add_pros" class="form-control"  #proName />
+                </div>
+                <button (click)="addPros(proName.value); proName.value=''">
+                    Add
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6  col-sm-6 col-xs-6 ">
+            <h2>Cons</h2>
+            <div class="row" *ngFor="let con of cons">
+                 <div class="col-md-6  col-sm-6 col-xs-6">{{con.text}}</div>
+                <div class="col-md-6  col-sm-6 col-xs-6">
+                    <a  (click)="deleteCons(con)" class="btn btn-primary a-btn-slide-text pull-right">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <span><strong>Delete</strong></span>            
+                    </a>   
+                    <a  routerLink="/detail/cons/{{con.id}}" class="btn btn-primary a-btn-slide-text pull-right">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        <span><strong>Edit</strong></span>            
+                    </a>
+
+                </div>
+            </div>
+            <div class="like_form">
+                <div class="form-group">
+                    <label for="add_pros"></label>
+                    <input id="add_pros" class="form-control"  #conName />
+                </div>
+                <button (click)="addCons(conName.value); proName.value=''">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
